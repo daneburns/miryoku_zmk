@@ -29,12 +29,14 @@ MIRYOKU_LAYER_LIST
 #undef MIRYOKU_X
   };
   
+
+};
+
  / {
     chosen {
       zmk,matrix_transform = &five_column_transform;
     };
   };
-};
 
 #include "miryoku_shift_functions.dtsi"
 
