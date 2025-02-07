@@ -29,17 +29,11 @@ MIRYOKU_LAYER_LIST
 #undef MIRYOKU_X
   };
   
-  kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
-        diode-direction = "col2row";
-		row-gpios
-			= <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio0 11  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			;
+ / {
+    chosen {
+      zmk,matrix_transform = &five_column_transform;
     };
+  };
 };
 
 #include "miryoku_shift_functions.dtsi"
